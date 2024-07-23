@@ -137,7 +137,7 @@ digitpattern6 (int n)
 {
   for (int i = 1; i <= n; i++)
 	{
-	  for ( int j = 1; j <= i; j++)
+	  for (int j = 1; j <= i; j++)
 		{
 		  if ((i + j) % 2 == 0)
 			{
@@ -151,24 +151,64 @@ digitpattern6 (int n)
 	  cout << endl;
 	}
 }
-void printRhombus(int n)
+
+void
+printRhombus (int n)
 {
-    for (int i = 1; i <= n; i++)
-    {
-        // Print leading spaces
-        for (int j = 1; j <= n - i; j++)
-        {
-            cout << " ";
-        }
-        // Print stars
-        for (int j = 1; j <= n; j++)
-        {
-            cout << "*";
-        }
-        cout << endl;
-    }
+  for (int i = 1; i <= n; i++)
+	{
+	  // Print leading spaces
+	  for (int j = 1; j <= n - i; j++)
+		{
+		  cout << " ";
+		}
+	  // Print stars
+	  for (int j = 1; j <= n; j++)
+		{
+		  cout << "*";
+		}
+	  cout << endl;
+	}
 }
-void digitpattern8(int n)
+
+void
+digitpattern8 (int n)
+{
+  for (int i = 1; i <= n; i++)
+	{
+	  for (int j = 1; j <= n - i; j++)
+		{
+		  cout << " ";
+		}
+	  for (int j = 1; j <= n; j++)
+		{
+		  cout << j;
+		}
+	  cout << endl;
+	}
+}
+
+void
+digitpattern9 (int n)
+{
+  for (int i = 1; i <= n; i++)
+	{
+	  for (int j = 1; j <= n - i; j++)
+		{
+		  cout << " ";
+		}
+	  for (int j = i; j > 1; j--)
+		{
+		  cout << j;
+		}
+	  for (int j = 2; j <= i; j++)
+		{
+		  cout << j;
+		}
+	  cout << endl;
+	}
+}
+void pattern5(int n)
 {
     for(int i=1;i<=n;i++)
     {
@@ -176,28 +216,38 @@ void digitpattern8(int n)
         {
             cout<<" ";
         }
-        for(int j=1;j<=n;j++)
+        for(int j=1;j<=(2*i-1);j++)
         {
-            cout<<j;
+            cout<<"*";
         }
         cout<<endl;
     }
-}
-void digitpattern9(int n)
-{
- for(int i=1;i<=n;i++)
+    for(int i=n;i>=1;i--)
     {
         for(int j=1;j<=n-i;j++)
         {
             cout<<" ";
         }
-        for(int j=i;j>1;j--)
+        for(int j=1;j<=(2*i+1);j++)
         {
-            cout<<j;
+            cout<<"*";
         }
-        for(int j=2;j<=i;j++)
+        cout<<endl;
+    }
+}
+void pattern6(int n)
+{
+    for(int i=1;i<=3;i++)
+    {
+        for(int j=1;j<=n;j++)
         {
-            cout<<j;
+            if(((i+j)%4==0) || ((i==2) || (j%4==0)))
+            {
+                cout<<"*";
+            }
+            else{
+                cout<<" ";
+            }
         }
         cout<<endl;
     }
@@ -207,7 +257,7 @@ int
 main ()
 {
   int n;
-  cout << "Enter the digit: ";
+  cout << "Enter the digit: "<<endl;
   cin >> n;
 
   cout << "Pattern 1" << endl;
@@ -246,14 +296,20 @@ main ()
   cout << endl;
   cout << " digitpattern6" << endl;
   digitpattern6 (n);
-  cout<<endl;
+  cout << endl;
   cout << " digitpattern7" << endl;
-  printRhombus(n);
-  cout<<endl;
+  printRhombus (n);
+  cout << endl;
   cout << " digitpattern8" << endl;
   digitpattern8 (n);
-  cout<<"digitpattern9"<<endl;
-  digitpattern9(n);
+  cout << "digitpattern9" << endl;
+  digitpattern9 (n);
+  cout << endl;
+  cout<<"pattern 5"<<endl;
+  pattern5(n);
+  cout<<endl;
+  cout<<"pattern6"<<endl;
+  pattern6(n);
   cout<<endl;
   return 0;
 }
